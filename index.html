@@ -6,6 +6,20 @@
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+        <script> class WriteText {
+            constructor(latitude, longitude) {
+            this.latitude = latitude;
+            this.longitude = longitude;
+            }
+            var latitude,longitude, welcomeText="Hello World";
+            getWelcomeText(){
+                return welcomeText;
+            }
+
+            let welcomeText = new WriteText(23,90);
+           // document.getElementById("demo").innerHTML = getWelcomeText();
+}       </script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -21,7 +35,7 @@
                     gps-entity-place="latitude: 23.746323102716662; longitude: 90.42123879123416;"
                 ></a-image>
                 <a-text
-                    value="Hello OPPA"
+                    value=welcomeText.getWelcomeText()
                     look-at="[gps-camera]"
                     scale="120 120 120"
                     gps-entity-place="latitude: 23.746323102716662; longitude: 90.42123879123416;"
