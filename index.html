@@ -16,13 +16,13 @@
             getWelcomeText(){
                 return welcomeText;
             }
-
-            let welcomeText = new WriteText(23,90);
-           // document.getElementById("demo").innerHTML = getWelcomeText();
         }</script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
+        <script> let welcomeText = new WriteText(23,90);
+            var welcome = welcomeText.getWelcomeText();
+        </script>
         
         <a-scene
             embedded
@@ -37,7 +37,7 @@
                 ></a-image>
             
                 <a-text id="txt1"
-                    value="javaScript;welcomeText.getWelcomeText()"
+                    value=welcome
                     look-at="[gps-camera]"
                     scale="30 25 20"
                     gps-entity-place="latitude: 23.746323102716662; longitude: 90.42123879123416;"
