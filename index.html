@@ -16,12 +16,8 @@
             init: function () {
             alert("Welcome foo in_it")},
             update: function () {
-            alert("Hello World from Update")},
-            tick: function () {},
-            remove: function () {},
-            pause: function () {},
-            play: function () {}
-        });
+            alert("Hello World from Update")}
+            });
       </script>
         <a-scene
             embedded
@@ -34,14 +30,15 @@
                     scale="30 25 20"
                     gps-entity-place="latitude: 23.746323102716662; longitude: 90.42123879123416;>
                 </a-entity>
-                <a-entity log="event: anEvent; message: Hello, Metaverse!"></a-entity>
-            <a-image
+                //<a-entity log="event: anEvent; message: Hello, Metaverse!"></a-entity>
+
+                <a-image
                     src="assets/asset.jpeg"
                     look-at="[gps-camera]"
-                    scale="10 10 5"
+                    scale="10 10 10"
                     gps-entity-place="latitude: 23.746323102716662; longitude: 90.42123879123416;"
                 ></a-image>
-<!--
+
                 <a-image
                     src="assets/asset.jpeg"
                     look-at="[gps-camera]"
@@ -60,7 +57,7 @@
                     scale="5 3 3"
                     gps-entity-place="latitude: 23.74590724177646; longitude: 90.4212284236727;"
                 ></a-image>
--->
+
             <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
     </body>
