@@ -6,24 +6,18 @@
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-
-        <script> class WriteText {
-            constructor(latitude, longitude) {
-            this.latitude = latitude;
-            this.longitude = longitude;
-            }
-            var latitude,longitude, welcomeText="Hello World";
-            getWelcomeText(){
-                return welcomeText;
-            }
-        }</script>
     </head>
-
-    <body style="margin: 0; overflow: hidden;">
-        <script> let welcomeText = new WriteText(23,90);
-            var welcome = welcomeText.getWelcomeText();
+    <body style="margin: 2; overflow: hidden;">
+        <script>
+        AFRAME.registerComponent('foo', {
+            schema: {type: 'int', default: 5},
+            init: function () {
+            alert("Welcome in_it")},
+            update: function () {
+            alert("Hello World from Update")},
+        });
         </script>
-        
+
         <a-scene
             embedded
             loading-screen="enabled: false;"
@@ -35,6 +29,8 @@
                     scale="10 10 5"
                     gps-entity-place="latitude: 23.746323102716662; longitude: 90.42123879123416;"
                 ></a-image>
+            
+                <a-entity foo="2021"></a-entity>
             
                 <a-text id="txt1"
                     value=welcome
