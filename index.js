@@ -3,5 +3,6 @@ AFRAME.registerComponent('foo', {
             init: function () {
             alert("Welcome in_it")},
             update: function () {
-            alert("Hello World from Update")},
+            alert("Hello World from Update");
+            console.log('Hello, World!');}
         });
