@@ -9,7 +9,19 @@
         <script type='text/javascript' src='index.js'></script>
     </head>
     <body style="margin: 2; overflow: hidden;">
-
+      <script>
+        AFRAME.registerComponent('foo', {
+            schema: {type: 'int', default: 5},
+            init: function () {
+            alert("Welcome in_it")},
+            update: function () {
+            alert("Hello World from Update")},
+            tick: function () {},
+            remove: function () {},
+            pause: function () {},
+            play: function () {}
+        });
+      </script>
         <a-scene
             embedded
             loading-screen="enabled: false;"
@@ -21,6 +33,7 @@
                     scale="30 25 20"
                     gps-entity-place="latitude: 23.746323102716662; longitude: 90.42123879123416;>
                 </a-entity>
+                <a-entity log="event: anEvent; message: Hello, Metaverse!"></a-entity>
 <!--
                 <a-image
                     src="assets/asset.jpeg"
