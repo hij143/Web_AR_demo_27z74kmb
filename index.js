@@ -5,7 +5,7 @@ AFRAME.registerComponent('log', {
   },
 
   init: function () {
-    alert("Welcome in_it");
+    alert("Welcome log in_it");
     var self = this;
     this.eventHandlerFn = function () { console.log(self.data.message); };
   },
