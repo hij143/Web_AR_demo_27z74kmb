@@ -10,6 +10,12 @@
     </head>
     <body style="margin: 2; overflow: hidden;">
       <script>
+        AFRAME.registerComponent('log', {
+            schema: {type: 'string'},
+            init: function () {
+            var stringToLog = this.data;
+            console.log(stringToLog);
+            }});
         AFRAME.registerComponent('foo', {
             schema: {type: 'int', default: 5},
             init: function () {
@@ -21,7 +27,12 @@
             embedded
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;">
-            
+                <a-text log
+                    value="welcome log"
+                    look-at="[gps-camera]"
+                    scale="5 5 1"
+                    //gps-entity-place="latitude: 23.750395367449276; longitude: 90.41541709857111;"
+                ></a-text>
                 <a-box id="redBox" class="clickable" color="red"
                     look-at="[gps-camera]"
                     scale="1 1 1"
