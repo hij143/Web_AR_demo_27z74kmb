@@ -6,19 +6,40 @@
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+                             
     </head>
-
-    <body style="margin: 0; overflow: hidden;">
+    <body style="margin: 2; overflow: hidden;">
+      <script>
+        AFRAME.registerComponent('foo', {
+            schema: {type: 'int', default: 5},
+            init: function () {
+            alert("Welcome foo in_it")},
+            update: function () {
+            alert("Hello World from Update")}
+            });
+      </script>
         <a-scene
             embedded
             loading-screen="enabled: false;"
-            arjs="sourceType: webcam; debugUIEnabled: false;"
-        >
+            arjs="sourceType: webcam; debugUIEnabled: false;">
+            
                 <a-image
-                    src="assets/asset.png"
+                    src="assets/asset.jpeg"
                     look-at="[gps-camera]"
                     scale="10 10 5"
-                    gps-entity-place="latitude: 23.750296799999997; longitude: 90.41549658465671;"
+                    gps-entity-place="latitude: 23.75031644040698; longitude: 90.41556095767162;"
+                ></a-image>                
+                <a-text id="txt1"
+                    value=welcome
+                    look-at="[gps-camera]"
+                    scale="30 25 20"
+                    gps-entity-place="latitude: 23.75031644040698; longitude: 90.41556095767162;"
+                ></a-text>
+                <a-image
+                    src="assets/Tumi_Amar_Jaan.png"
+                    look-at="[gps-camera]"
+                    scale="5 3 3"
+                    gps-entity-place="latitude: 23.74590724177646; longitude: 90.4212284236727;"
                 ></a-image>
 
             <a-camera gps-camera rotation-reader></a-camera>
