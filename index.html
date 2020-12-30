@@ -12,10 +12,7 @@
       <script>
         AFRAME.registerComponent('log', {
             schema: {type: 'string'},
-            init: function () {
-            var stringToLog = this.data;
-            console.log(stringToLog);
-            }});
+            });
         AFRAME.registerComponent('foo', {
             schema: {type: 'int', default: 5},
             init: function () {
