@@ -12,6 +12,10 @@
       <script>
         AFRAME.registerComponent('log', {
             schema: {type: 'string'},
+            init: function () {
+            var stringToLog = this.data;
+            console.log(stringToLog);
+            }
             });
         AFRAME.registerComponent('foo', {
             schema: {type: 'int', default: 5},
@@ -37,12 +41,6 @@
                 <a-entity light="type: ambient"></a-entity>
                 <a-entity light="type: directional"></a-entity>
                 
-                <a-image
-                    src="assets/asset.jpeg"
-                    look-at="[gps-camera]"
-                    scale="2 2 1"
-                    gps-entity-place="latitude: 23.75031644040698; longitude: 90.41556095767162;"
-                ></a-image>
                 <a-text
                     value="welcome"
                     look-at="[gps-camera]"
