@@ -10,6 +10,8 @@
     </head>
     <body style="margin: 2; overflow: hidden;">
       <script>
+        var sceneEl = document.querySelector('a-scene');
+          
         AFRAME.registerComponent('log', {
             schema: {type: 'string'},
             init: function () {
@@ -21,8 +23,18 @@
             schema: {type: 'int', default: 5},
             init: function () {
             alert("Welcome foo in_it")},
-            
             });
+        AFRAME.registerComponent('do-something-once-loaded', {
+            init: function () {
+            alart("creat element")
+            console.log('I am ready!');}
+            });
+        function myFunction() {
+            var entityEl = document.createElement('a-entity');
+            entityEl.setAttribute('do-something-once-loaded', '');
+            sceneEl.appendChild(entityEl);
+        }
+        
       </script>
         <a-scene
             embedded
@@ -33,10 +45,10 @@
                     look-at="[gps-camera]"
                     scale="5 5 1"                        
                 ></a-text>
-                <a-box id="redBox" class="clickable" color="red"
+                <a-box id="redBox" onclick="myFunction()" color="red"
                     look-at="[gps-camera]"
                     scale="1 1 45"
-                    gps-entity-place="latitude: 23.75031644040698; longitude: 90.41556095767162;">
+                    gps-entity-place="latitude: 23.75872640632474; longitude: 90.46559892567706;">
                 </a-box>
                 <a-entity light="type: ambient"></a-entity>
                 <a-entity light="type: directional"></a-entity>
@@ -47,7 +59,7 @@
                     scale="5 5 1"
                     gps-entity-place="latitude: 23.750395367449276; longitude: 90.41541709857111;"
                 ></a-text>
-                <a-image
+                <a-image 
                     src="assets/Tumi_Amar_Jaan.png"
                     look-at="[gps-camera]"
                     scale="20 20 1"
