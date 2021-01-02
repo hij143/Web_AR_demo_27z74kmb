@@ -10,6 +10,7 @@
     </head>
     <body style="margin: 2; overflow: hidden;">
       <script>
+          document.getElementById("clickMe").onclick = function () { alert('hello!'); };
         var sceneEl = document.querySelector('a-scene');
           
         AFRAME.registerComponent('log', {
@@ -36,6 +37,7 @@
         }
         
       </script>
+      <input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
         <a-scene
             embedded
             loading-screen="enabled: false;"
