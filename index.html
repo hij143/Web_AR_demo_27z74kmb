@@ -9,6 +9,9 @@
                              
     </head>
       <script>
+        document.querySelector('#refresh-button').addEventListener('click', function() {
+            alert("function calling start");}
+            });
         AFRAME.registerComponent('log', {
             schema: {type: 'string'},
             init: function () {
@@ -36,8 +39,10 @@
             embedded
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;">
-                
-            <a-text log onclick="myFunction()" value="log-8" look-at="[gps-camera]"></a-text>
+            
+            <a-entity id="refresh-button" geometry="primitive: box" material="color: red" position="0 0 -2"></a>  
+            
+            <a-text log onclick="myFunction()" value="log-9" look-at="[gps-camera]"></a-text>
             <a-box id="redBox" onclick="myFunction()" color="red" look-at="[gps-camera]" scale="1 1 45"></a-box>
             <a-image onclick="myFunction()"
                 src="assets/Tumi_Amar_Jaan.png"
