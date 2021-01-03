@@ -30,7 +30,7 @@
             entityEl.setAttribute('do-something-once-loaded', '');
             sceneEl.appendChild(entityEl);
         }
-        document.querySelector('a-entity').addEventListener('cilck', function (evt) {
+        document.querySelector('log').addEventListener('cilck', function (evt) {
         alert("Entity called")
         console.log('This A-Frame entity collided with another entity!');
         });
@@ -41,7 +41,7 @@
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;">
                 <a-text log onclick="myFunction()"
-                    value="log-5"
+                    value="log-6"
                     look-at="[gps-camera]"
                     scale="1 1 1"                        
                 ></a-text>
