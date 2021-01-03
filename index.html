@@ -8,26 +8,21 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
                              
     </head>
-    <body style="margin: 2; overflow: hidden;">
       <script>
-          document.getElementById("clickMe").onclick = function () { alert('hello!'); };
-        var sceneEl = document.querySelector('a-scene');
-          
         AFRAME.registerComponent('log', {
             schema: {type: 'string'},
             init: function () {
             var stringToLog = this.data;
-            console.log(stringToLog);
-            }
+            console.log(stringToLog);}
             });
         AFRAME.registerComponent('foo', {
             schema: {type: 'int', default: 5},
             init: function () {
-            alert("Welcome foo in_it")},
+            alert("Welcome foo in_it")}
             });
         AFRAME.registerComponent('do-something-once-loaded', {
             init: function () {
-            alart("creat element")
+            alert("creat element")
             console.log('I am ready!');}
             });
         function myFunction() {
@@ -35,10 +30,13 @@
             entityEl.setAttribute('do-something-once-loaded', '');
             sceneEl.appendChild(entityEl);
         }
-        
+        document.querySelector('a-entity').addEventListener('cilck', function (evt) {
+        alert("Entity called")
+        console.log('This A-Frame entity collided with another entity!');
+        });
       </script>
       <input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
-        <a-scene
+        <a-scene cursor="rayOrigin: mouse"
             embedded
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;">
