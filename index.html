@@ -13,6 +13,9 @@
             schema: {type: 'string'},
             init: function () {
             var stringToLog = this.data;}
+            function myFunction(){
+                alert("Fnction calling");
+                }
             });
         AFRAME.registerComponent('foo', {
             schema: {type: 'int', default: 5},
@@ -34,7 +37,7 @@
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;">
                 
-            <a-text log onclick="myFunction()" value="log-7" look-at="[gps-camera]"></a-text>
+            <a-text log onclick="myFunction()" value="log-8" look-at="[gps-camera]"></a-text>
             <a-box id="redBox" onclick="myFunction()" color="red" look-at="[gps-camera]" scale="1 1 45"></a-box>
             <a-image onclick="myFunction()"
                 src="assets/Tumi_Amar_Jaan.png"
