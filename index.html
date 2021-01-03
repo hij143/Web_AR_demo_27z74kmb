@@ -12,27 +12,20 @@
         AFRAME.registerComponent('log', {
             schema: {type: 'string'},
             init: function () {
-            var stringToLog = this.data;
-            console.log(stringToLog);}
+            var stringToLog = this.data;}
             });
         AFRAME.registerComponent('foo', {
             schema: {type: 'int', default: 5},
             init: function () {
-            alert("Welcome foo in_it")}
+            alert("Welcome foo in_it");}
             });
         AFRAME.registerComponent('do-something-once-loaded', {
             init: function () {
-            alert("creat element")
-            console.log('I am ready!');}
+            alert("do-something-once-loaded");}
             });
-        function myFunction() {
-            var entityEl = document.createElement('a-entity');
-            entityEl.setAttribute('do-something-once-loaded', '');
-            sceneEl.appendChild(entityEl);
-        }
+        
         document.querySelector('log').addEventListener('cilck', function (evt) {
-        alert("Entity called")
-        console.log('This A-Frame entity collided with another entity!');
+            alert("Entity called");
         });
       </script>
       <input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
@@ -40,32 +33,16 @@
             embedded
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;">
-                <a-text log onclick="myFunction()"
-                    value="log-6"
-                    look-at="[gps-camera]"
-                    scale="1 1 1"                        
-                ></a-text>
-                <a-box id="redBox" onclick="myFunction()" color="red"
-                    look-at="[gps-camera]"
-                    scale="1 1 45"
-                    gps-entity-place="latitude: 23.75872640632474; longitude: 90.46559892567706;">
-                </a-box>
-                <a-entity light="type: ambient"></a-entity>
-                <a-entity light="type: directional"></a-entity>
                 
-                <a-text
-                    value="welcome"
-                    look-at="[gps-camera]"
-                    scale="5 5 1"
-                    gps-entity-place="latitude: 23.750395367449276; longitude: 90.41541709857111;"
-                ></a-text>
-                <a-image onclick="myFunction()"
-                    src="assets/Tumi_Amar_Jaan.png"
-                    look-at="[gps-camera]"
-                    scale="20 20 1"
-                    gps-entity-place="latitude: 23.74590724177646; longitude: 90.4212284236727;"
-                ></a-image>
-
+            <a-text log onclick="myFunction()" value="log-7" look-at="[gps-camera]"></a-text>
+            <a-box id="redBox" onclick="myFunction()" color="red" look-at="[gps-camera]" scale="1 1 45"></a-box>
+            <a-image onclick="myFunction()"
+                src="assets/Tumi_Amar_Jaan.png"
+                look-at="[gps-camera]"
+                cale="1 1 1"
+                gps-entity-place="latitude: 23.74590724177646; longitude: 90.4212284236727;"
+            ></a-image>
+            
             <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
     </body>
